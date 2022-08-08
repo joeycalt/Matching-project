@@ -1,0 +1,12 @@
+***MONDAY***
+
+1. I will build a Matching game.
+
+2. Show in bowser.
+
+3. - The way I will start the game is with squares turned over not showing the picture the tile holds. The board will of 12 different cells. 
+   - The player will then click on one cell, which will show the the picture underneath. Which they will then continue to flip over tiles to find the match.
+   - If player chooses incorrectly tiles will flip back over. 
+   - The player will win once all tiles are matched correctly. 
+   - The player will lose if they do not get the tiles turned over in a certain amount of time.
+   - I will keep a side bar that holds how much matches they need to get and how much they currently have. Also will show the time the player currently has left to complete the game. 

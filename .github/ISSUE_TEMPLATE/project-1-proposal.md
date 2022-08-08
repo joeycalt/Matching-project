@@ -8,12 +8,11 @@ assignees: ''
 ---
 
 ### Link to your GH repository
-
+https://github.com/joeycalt/Project-1-Browser-Game.git
 ### Your chosen game 
-> Brief 2-3 sentence description of your game
-
+Players will have a total of 16 tiles to choose from and try to match 8 different emojis and finsih it before time runs out to win.
 ### Basic User stories
 
 ### Wireframes 
-
+Show in browser
 ### Anything else your instructional team should know
