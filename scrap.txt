@@ -91,3 +91,63 @@
 //         }
 //     });
 // }
+
+
+
+// randomly put emojis into cards
+// cells.forEach((cell, index)=> {
+//     cell.addEventListener('click', move )
+// let randomItem = face[Math.floor(Math.random() * face.length)]; {
+// cell.setAttribute('data-card', index)
+// }
+// }) 
+// console.log(cells)
+
+
+// const tiles = [...document.querySelectorAll('#cells')];
+// for(const tile of tiles) {
+//     console.log(tile)
+//     tile.addEventListener('click', viewCard)
+// }
+
+
+
+
+// function flipOver(e) {
+//     if (!wrong) {
+//         let element = e.currentTarget;
+//         e.target.classList.toggle('open');
+//         if(counterTwo == 1) {
+//             firstClick = element;
+//             counterTwo = 2;
+//         } else if (counter == 2) { 
+//             secondClick = element;
+//             let card1Type = firstClick.getElementsByTagName('i')[0].className;
+//             let card2Type = secondClick.getElementsByTagName('i')[0].className;
+//             if(card1Type == card2Type) {
+//                 firstClick.removeEventListener('click', flipOver);
+//                 secondClick.removeEventListener('click', flipOver);
+
+//             } else {
+//                 wrong = true;
+//                 setTimeout(proceed, 1000)
+//             }
+//             counterTwo = 1;
+//         } 
+//     }
+// }
+
+
+
+// flip card when clicked
+// cells.forEach((cell) => cell.addEventListener('click', flip)); 
+// function flip()
+// {this.classList.add('flip');}
+
+// function flip() {this.classList.add('flip');
+// if (!isFlipped) {
+//     isFlipped = true; firstClick = this;
+//     return;}
+//     secondClick = this;
+//     let isMatch = firstClick.dataset.emojis === secondClick.dataset.emojis;
+// }
