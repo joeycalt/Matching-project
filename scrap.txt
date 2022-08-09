@@ -1,0 +1,93 @@
+<div class="front-card"></div>
+
+   <!-- <div> -->
+          <!-- <div class="front-card"></div> -->
+          <div id="cell" class="box1">?</div>
+       <!-- </div> -->
+        <div id="cell" class="box2">?</div>
+        <div id="cell" class="box3">?</div>
+        <div id="cell" class="box4">?</div>
+        <div id="cell" class="box5">?</div>
+        <div id="cell" class="box6">?</div>
+        <div id="cell" class="box7">?</div>
+        <div id="cell" class="box8">?</div>
+        <div id="cell" class="box9">?</div>
+        <div id="cell" class="box10">?</div>
+        <div id="cell" class="box11">?</div>
+        <div id="cell" class="box12">?</div>
+        <div id="cell" class="box13">?</div>
+        <div id="cell" class="box14">?</div>
+        <div id="cell" class="box15">?</div>
+        <div id="cell" class="box16">?</div>
+
+
+        /* @media screen and (min-width: 400px) and (max-width: 750px) {
+    #cells {
+        width: 15%;
+        height: 95px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        font-size: 80px; 
+        border-radius: 5%;
+        border: 3px solid white;
+        background-color: rgb(7, 27, 242);
+        grid-column: 2;
+        grid-row: 2;
+        color: white;
+        cursor: pointer;
+    } */
+/* }
+
+
+// function checkForMatched() {
+//      let cards = document.querySelector('emojis');
+//      const optionOneId = cardsSelectedId[0];
+//      const optionTwoId = cardsSelectedId[1];
+//      if(cardsSelected[0] === cardsChosen[1]) {
+//         alert('You found a match!');
+//         cardsWon.push(cardsSelected)
+//      } else {
+//         cards[optionOneId];
+//         cards[optionTwoId];
+//         alert('Sorry, Try Again!')
+//      }
+//      cardsSelected = [];
+//      cardsChosenId = [];
+//      matchedDisplay.textContent = cardsWon.length;
+//      if (cardsWon.length === emojis.array.length/2 ) {
+//         matchedDisplay.textContent = 'Congratulations! You Win!'
+//      }
+
+
+// }
+
+// // unmatched cards
+// function unmatched() {
+//     openedCards[0].classList.add('unmatched');
+//     openedCards[1].classList.add('unmatched');
+//     disable();
+//     setTimeout(function () {
+//         openedCards[0].classList.remove('show', 'open', 'no-event', 'unmatched');
+//         openedCards[1].classList.remove('show', 'open', 'no-event', 'unmatched');
+//         enable();
+//         openedCards = [];
+//     },1100);
+// }
+
+// // disable cards 
+// function disable() {
+//     emojis.prototype.filter.call(cards, function() { 
+//         card.classList.add('disabled');
+//     });
+// }
+
+// // prevent cards that are matched from being picked again
+// function enable() {
+//     emojis.prototype.filter.call(cards, function () {
+//         card.classList.remove('disabled');
+//         for(let i = 0; i < matched.length; i++) {
+//             matched[i].classList.add('disabled');
+//         }
+//     });
+// }

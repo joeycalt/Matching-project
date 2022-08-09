@@ -38,6 +38,7 @@ h3 {
     color: white;
     font-size: 30px;
     line-height: 50px;
+    cursor: pointer;
 }
 
 .start:hover {
@@ -51,6 +52,7 @@ h3 {
     color: white;
     font-size: 30px;
     line-height: 50px;
+    cursor: pointer;
 }
 
 .reset:hover {
@@ -86,16 +88,22 @@ h3 {
     justify-content: center; 
     align-items: center;
     font-size: 80px; 
-    border-radius: 5%;
+    border-radius: 10%;
     border: 3px solid white;
     background-color: rgb(7, 27, 242);
     grid-column: 2;
     grid-row: 2;
     color: white;
     cursor: pointer;
+    transition: 0.5s all ease;
 }
 
-#cells img.flip {
+#cell:hover {
+    background-color: orange;
+    transform: scale(1.03);
+}
+
+#cell:active {
     transform: rotateY(180deg);
 }
 
@@ -115,4 +123,32 @@ h3 {
 
 .reset:focus {
     color: yellow;
+}
+
+/* .box1 {
+    border-radius: 10%;
+    transition:
+
+}
+
+.box2 {
+    border-radius: 10%;
+    transition: 0.5s all ease;
+}
+
+.box2:hover {
+    transform: scale(1.03)
+} */
+
+.box.clicked {
+    color: black;
+}
+
+.card.shake {
+    animation: shake 0.5s;
+    background-color: red;
+}
+
+@keyframes shake {
+    
 }
