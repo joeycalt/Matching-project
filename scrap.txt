@@ -151,3 +151,17 @@
 //     secondClick = this;
 //     let isMatch = firstClick.dataset.emojis === secondClick.dataset.emojis;
 // }
+
+
+
+// // declaring matched cards
+// let counterTwo = 1;
+// let wrong = false;
+// for (let i = 0; i < emojis.length; i++) {
+//     // emojis[i].addEventListener('click');
+// }
+// function proceed() {
+//     firstClick.classList.toggle('open');
+//     secondClick.classList.toggle('open');
+//     wrong = false;
+// }

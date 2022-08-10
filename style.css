@@ -89,8 +89,8 @@ h3 {
     display: flex;
     justify-content: center; 
     align-items: center;
-    font-size: 80px; 
-    border-radius: 20%;
+    font-size: 35px; 
+    border-radius: 10%;
     border: 3px solid white;
     background-color: rgb(7, 27, 242);
     grid-column: 2;
@@ -107,6 +107,8 @@ h3 {
 
 #cell:active {
     transform: rotateY(180deg);
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 #gameboard-wrapper {
@@ -143,7 +145,7 @@ h3 {
     transform: scale(1.03)
 } */
 
-.box.checked {
+/* .box.checked {
     color: black;
 }
 
@@ -154,7 +156,7 @@ h3 {
 
 @keyframes shake {
 
-}
+} */
 
 
 .flips-box {
@@ -167,3 +169,14 @@ h3 {
     border-radius: 20px;
     color: white;
 }
+
+/* .box zero flip {
+    transform: rotateY(180 deg);
+} */
+
+
+.front-face, .back-face {
+    backface-visibility: hidden;
+}
+
+
