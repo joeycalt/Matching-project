@@ -16,8 +16,7 @@ let cardsWon = [];
 let count = 0;
 let cardsSelectedId = []; 
 let cardsChosen = [];
-let firstClick;
-let secondClick;
+let firstClick, secondClick;
 let clicksCounter = 0;
 let isFlipped = false;
 let lock = false;
@@ -38,12 +37,22 @@ let boxTwelve = document.querySelector('.box_twelve')
 let boxThirteen = document.querySelector('.box_thirteen')
 let boxFourteen = document.querySelector('.box_fourteen')
 let boxFifteen = document.querySelector('.box_fifteen')
+const audio = new Audio ("https://www.fesliyanstudios.com/play-mp3/5450")
+let textIndent = '0'
+let style;
+
 // __________________________________________________________________//
 // CODE:
 // |
 // |
 // |
 // v
+
+
+
+
+cells.forEach(cell => cell.addEventListener('click', flipCard))
+
 
 function move(e) {
     currentFace = e.target.dataset.card
@@ -62,97 +71,168 @@ function reloadPage() {
 }
 
 
+function flipCard() {
+    this.classList.add('flip');
+    
+    if (!isFlipped) {
+        isFlipped= true;
+        firstClick = this;
 
+        console.log({isFlipped, firstClick})
+    } else {
+        isFlipped = false;
+        secondClick= this;
+
+        console.log({firstClick, secondClick}) 
+        console.log(firstClick.innerHTML);
+        console.log(secondClick.innerHTML)
+/// checking for match
+    if(firstClick.innerHTML === secondClick.innerHTML) {
+        firstClick.removeEventListener('click', flipCard);
+        secondClick.removeEventListener('click', flipCard);
+        setTimeout(function(){alert('Its A Match!');}, 1100)
+
+       
+    } if(firstClick.innerHTML !== secondClick.innerHTML) {
+       
+    }
+            
+           setTimeout(function(){alert('Sorry! Try Again!');}, 1100)
+        
+         
+    } 
+    } 
+
+// if(firstClick && secondClick === emojis.length);
+//         console.log('GAME OVER!')
 
 
 // flips counter
 wrappers.addEventListener('click', function () {
-    count += 1;
-    document.querySelector('.flips-box').innerText = count;
-    console.log(count);
-});
-
-
-
-
-
-
-// start timer to countdown time from 45 seconds and alerting player
-document.querySelector('.start').addEventListener('click', function() {
-    let counter = 45;
-    setInterval( function () {
-        counter--;
-        if(counter >=0) {
-            span = document.querySelector('.start');
-            span.innerHTML = counter;
-        }
-        if (counter === 0) {
-            alert('Sorry, Time ran out!');
-            clearInterval(counter);
-        }
-    }, 1000);
-}, {once: true})
-
-
-
-
-
-
-// shuffle array of emojis
-let shuffledEmojis = emojis.sort(function () {
-    return Math.random() - 0.5;
-});
-console.log(shuffledEmojis);
-
-
-let newEmojis = shuffledEmojis;
-cells.forEach((cell) => {
-    boxZero.innerHTML = newEmojis[0];
-    boxOne.innerHTML = newEmojis[1];
-    boxTwo.innerHTML = newEmojis[2];
-    boxThree.innerHTML = newEmojis[3];
-    boxFour.innerHTML = newEmojis[4];
-    boxFive.innerHTML = newEmojis[5];
-    boxSix.innerHTML = newEmojis[6];
-    boxSeven.innerHTML = newEmojis[7];
-    boxEight.innerHTML = newEmojis[8];
-    boxNine.innerHTML = newEmojis[9];
-    boxTen.innerHTML = newEmojis[10];
-    boxEleven.innerHTML = newEmojis[11];
-    boxTwelve.innerHTML = newEmojis[12];
-    boxThirteen.innerHTML = newEmojis[13];
-    boxFourteen.innerHTML = newEmojis[14];
-    boxFifteen.innerHTML = newEmojis[15];
-
-}) 
-
-
-
-
-// keep cards matched and return cards not matched
-function flipCard () {
-    this.classList.add('flip');
+        count += 1;
+        document.querySelector('.flips-box').innerText = count;
+        console.log(count);
+    });
     
-    if(!isFlipped) {
-        isFlipped = true;
-        firstClick = this;
-        return;
-    } else {
-        isFlipped = false;
-        secondClick = this;
+    
+    
+    
+    
+    
+    // start timer to countdown time from 45 seconds and alerting player
+    document.querySelector('.start').addEventListener('click', function() {
+        audio.play();
+        let counter = 45;
+        setInterval( function () {
+            counter--;
+            if(counter >=0) {
+                span = document.querySelector('.start');
+                span.innerHTML = counter;
+            }
+            if (counter === 0) {
+                alert('Sorry, Time ran out!');
+                clearInterval(counter);
+            }
+        }, 1000);
+    }, {once: true})
+    
+    
+    
+    
+    
+    
+    // shuffle array of emojis
+    let shuffledEmojis = emojis.sort(function () {
+        return Math.random() - 0.5;
+    });
+    
+    console.log(shuffledEmojis);
+    
+    
+    let newEmojis = shuffledEmojis;
+    cells.forEach((cell) => {
+        boxZero.innerHTML = newEmojis[0];
+        boxOne.innerHTML = newEmojis[1];
+        boxTwo.innerHTML = newEmojis[2];
+        boxThree.innerHTML = newEmojis[3];
+        boxFour.innerHTML = newEmojis[4];
+        boxFive.innerHTML = newEmojis[5];
+        boxSix.innerHTML = newEmojis[6];
+        boxSeven.innerHTML = newEmojis[7];
+        boxEight.innerHTML = newEmojis[8];
+        boxNine.innerHTML = newEmojis[9];
+        boxTen.innerHTML = newEmojis[10];
+        boxEleven.innerHTML = newEmojis[11];
+        boxTwelve.innerHTML = newEmojis[12];
+        boxThirteen.innerHTML = newEmojis[13];
+        boxFourteen.innerHTML = newEmojis[14];
+        boxFifteen.innerHTML = newEmojis[15];
+    })  
+    
+    document.querySelector('.box_zero').addEventListener('click', () => {
+        boxZero.style.textIndent = '0' ;
         
-        if (firstClick === secondClick) {
-            firstClick.removeEventListener('click', flipCard);
-            secondClick.removeEventListener('click', flipCard);
-        } else {
-            setTimeout(() => {
-                firstClick.classList.remove('flip');
-                secondClick.classList.remove('flip');
-            }, 1500);
-            
-        }
-    }
-    cells.forEach(cell => cell.addEventListener('click', flipCard));
+    })
+    
+    document.querySelector('.box_one').addEventListener('click', () => {
+        boxOne.style.textIndent = '0' ;
+    })
 
+    document.querySelector('.box_two').addEventListener('click', () => {
+        boxTwo.style.textIndent = '0' ;
+    })
 
-    }
+    document.querySelector('.box_three').addEventListener('click', () => {
+        boxThree.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_four').addEventListener('click', () => {
+        boxFour.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_five').addEventListener('click', () => {
+        boxFive.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_six').addEventListener('click', () => {
+        boxSix.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_seven').addEventListener('click', () => {
+        boxSeven.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_eight').addEventListener('click', () => {
+        boxEight.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_nine').addEventListener('click', () => {
+        boxNine.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_ten').addEventListener('click', () => {
+        boxTen.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_eleven').addEventListener('click', () => {
+        boxEleven.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_twelve').addEventListener('click', () => {
+        boxTwelve.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_thirteen').addEventListener('click', () => {
+        boxThirteen.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_fourteen').addEventListener('click', () => {
+        boxFourteen.style.textIndent = '0' ;
+    })
+
+    document.querySelector('.box_fifteen').addEventListener('click', () => {
+        boxFifteen.style.textIndent = '0' ;
+    })
+
+ 
+

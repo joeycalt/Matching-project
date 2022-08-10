@@ -165,3 +165,11 @@
 //     secondClick.classList.toggle('open');
 //     wrong = false;
 // }
+
+
+
+setTimeout(() => {
+        firstClick.classList.remove('flip');
+        secondClick.classList.remove('flip');
+        alert('Sorry, not a match. Try Again!')
+        }, 1100); 
