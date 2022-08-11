@@ -173,3 +173,111 @@ setTimeout(() => {
         secondClick.classList.remove('flip');
         alert('Sorry, not a match. Try Again!')
         }, 1100); 
+
+
+
+
+------------------------------------------------------------------------------
+
+ function flipCard() {
+    this.classList.add('flip');
+    
+    if (!isFlipped) {
+        isFlipped= true;
+        firstClick = this;
+
+        console.log({isFlipped, firstClick})
+    } else {
+        isFlipped = false;
+        secondClick= this;
+
+        console.log({firstClick, secondClick}) 
+        console.log(firstClick.innerHTML);
+        console.log(secondClick.innerHTML)
+    
+    // checking for match and not matched
+    if(firstClick.innerHTML === secondClick.innerHTML) {
+        firstClick.removeEventListener('click', flipCard);
+        secondClick.removeEventListener('click', flipCard);
+        setTimeout(function(){alert('Its A Match!');}, 1100)
+
+       
+    } else {
+        setTimeout(() => {
+            firstClick.classList.remove('flip')
+            secondClick.classList.remove('flip');
+            alert('Try Again!')
+        })
+    }
+           
+        
+         
+    } 
+    } 
+
+    function gameOver() {
+        if(firstClick && secondClick === shuffledEmojis.length/2) {
+            alert('You Win!')
+        }
+    }
+
+
+
+    -------------------------------------------------------------------------
+
+    function flipCard () {
+    // if (lockBoard) return;
+    if (this === firstClick) return;
+
+    this.classList.add('flip');
+
+    if (!isFlipped) {
+        isFlipped = true;
+        firstClick = this;
+
+        return;
+    }
+    secondClick = this;
+    checkForMatch();
+}
+
+function checkForMatch() {
+    let isMatch = firstClick.innerHTML === secondClick.innerHTML;
+        if(firstClick.innerHTML === secondClick.innerHTML) {
+            setTimeout(function(){alert('Its A Match!');}, 1100)
+        }
+    if(isMatch) {
+        clicksCounter +=1;
+        disableCards();
+        if(clicksCounter == (shuffledEmojis.length/2)) {
+            setTimeout(function(){alert('Congrats! You Win!!!');}, 1600)
+        }
+    }
+    else { unflipCards();}
+}
+function disableCards() {
+    firstClick.removeEventListener('click', flipCard);
+    secondClick.removeEventListener('click', flipCard);
+  
+    resetBoard();
+  }
+  
+function unflipCards() {
+    lockBoard = false;
+  
+    setTimeout(() => {
+      firstClick.removeEventListener('click', flipCard);
+      secondClick.removeEventListener('click', flipCard);
+      setTimeout(function(){alert('Sorry! Not a match!');}, 1100)
+  
+      resetBoard();
+    }, 500);
+  }
+  
+function resetBoard() {
+    // isFlipped = false;
+    lockBoard = true;
+    // firstClick = null;
+    // secondClick = null;
+
+  }

@@ -31,6 +31,14 @@ h3 {
    margin: -2px;
 }
 
+.win {
+    visibility: hidden;
+}
+
+.lost {
+    display: none;
+}
+
 .start {
     margin: 40px;
     border-radius: 20px;
@@ -130,35 +138,6 @@ h3 {
     color: yellow;
 }
 
-/* .box1 {
-    border-radius: 10%;
-    transition:
-
-}
-
-.box2 {
-    border-radius: 10%;
-    transition: 0.5s all ease;
-}
-
-.box2:hover {
-    transform: scale(1.03)
-} */
-
-/* .box.checked {
-    color: black;
-}
-
-.card.shake {
-    animation: shake 0.5s;
-    background-color: red;
-}
-
-@keyframes shake {
-
-} */
-
-
 .flips-box {
     height: 90px;
     width: 90px;
@@ -170,32 +149,18 @@ h3 {
     color: white;
 }
 
-/* .box zero flip {
-    transform: rotateY(180 deg);
-} */
-
-
-
-
-
-@media (min-width: 500px) {
-    .column {
-      width: 50%;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    .column {
+  @media (max-width: 600px) {
+    #cell, #left-head {
       width: 100%;
     }
   }
 
-.box_zero, .box_one, .box_two, .box_three, .box_four, .box_five, .box_six, .box_seven, .box_eight, .box_nine, .box_ten, .box_eleven, .box_twelve, .box_thirteen, .box_fourteen, .box_fifteen {
-    text-indent: 190%;
+  .box_zero, .box_one, .box_two, .box_three, .box_four, .box_five, .box_six, .box_seven, .box_eight, .box_nine, .box_ten, .box_eleven, .box_twelve, .box_thirteen, .box_fourteen, .box_fifteen {
+    text-indent: 2000%;
     white-space: no wrap;
     overflow: hidden;
 }
 
-.box_zeroFlip {
-    background-color: black;
+#cell.box_zero.flip, #cell.box_one.flip, #cell.box_two.flip, #cell.box_three.flip, #cell.box_four.flip, #cell.box_five.flip, #cell.box_six.flip, #cell.box_seven.flip, #cell.box_eight.flip, #cell.box_nine.flip, #cell.box_ten.flip, #cell.box_eleven.flip, #cell.box_twelve.flip, #cell.box_thirteen.flip, #cell.box_fourteen.flip, #cell.box_fifteen.flip {
+    background-color: green;
 }

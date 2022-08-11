@@ -10,8 +10,23 @@
 
 - Creating this Emoji Matching game was a great experience. I learned many new things when it comes to software development. In order to build this game, I used HTML to set up the website with the important variables. Used CSS to 'decorate' the game to make it look fun and approachable. Lastly, used Javscript to make the game actually work. Made the Start button begin the game, Play Again button to refresh the gameboard, and made each individual card clickable to flip them over and show their respective emoji.
 
+- Phtots of game:
 
-- Visit and play Emoji Matching here ---> 
+
+
+
+- Visit and play Emoji Matching here!! ---> ["https://joeycalt.github.io/Matching-project/"]
+
+
+
+
+
+
+
+
+
+
+
 
 ## **Overview**
 

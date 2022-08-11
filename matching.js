@@ -19,8 +19,8 @@ let cardsChosen = [];
 let firstClick, secondClick;
 let clicksCounter = 0;
 let isFlipped = false;
-let lock = false;
-letFlipsBox = document.querySelector('.flips-box')
+let lockBoard = false;
+let FlipsBox = document.querySelector('.flips-box')
 let boxZero = document.querySelector('.box_zero')
 let boxOne = document.querySelector('.box_one')
 let boxTwo = document.querySelector('.box_two')
@@ -38,8 +38,8 @@ let boxThirteen = document.querySelector('.box_thirteen')
 let boxFourteen = document.querySelector('.box_fourteen')
 let boxFifteen = document.querySelector('.box_fifteen')
 const audio = new Audio ("https://www.fesliyanstudios.com/play-mp3/5450")
-let textIndent = '0'
-let style;
+let winGame = document.querySelector('.win');
+let lostGame = document.querySelector('.lost');
 
 // __________________________________________________________________//
 // CODE:
@@ -51,6 +51,27 @@ let style;
 
 
 
+
+
+// start timer to countdown time from 45 seconds and alerting player
+document.querySelector('.start').addEventListener('click', function() {
+audio.play();
+let counter = 45;
+setInterval( function () {
+        counter--;
+        if(counter >=0) {
+            span = document.querySelector('.start');
+            span.innerHTML = counter;
+        }
+        if (counter === 0) {
+            alert('Sorry, Time ran out!');
+            clearInterval(counter);
+        }
+    }, 1000);
+}, {once: true})
+
+
+   // flip cards
 cells.forEach(cell => cell.addEventListener('click', flipCard))
 
 
@@ -63,15 +84,17 @@ function move(e) {
 
 
 
-// reset game and page
+   // reset game and page
+   
 resetButton.onclick = reloadPage;
 
 function reloadPage() {
     window.location.reload();
 }
+   
+   // compare cards
 
-
-function flipCard() {
+   function flipCard() {
     this.classList.add('flip');
     
     if (!isFlipped) {
@@ -86,28 +109,37 @@ function flipCard() {
         console.log({firstClick, secondClick}) 
         console.log(firstClick.innerHTML);
         console.log(secondClick.innerHTML)
-/// checking for match
+    
+    // checking for match and not matched
+    let isMatch = firstClick.innerHTML === secondClick.innerHTML;
     if(firstClick.innerHTML === secondClick.innerHTML) {
         firstClick.removeEventListener('click', flipCard);
         secondClick.removeEventListener('click', flipCard);
         setTimeout(function(){alert('Its A Match!');}, 1100)
-
-       
-    } if(firstClick.innerHTML !== secondClick.innerHTML) {
-       
     }
-            
-           setTimeout(function(){alert('Sorry! Try Again!');}, 1100)
+        if(isMatch) {
+            clicksCounter +=1;
+            if(clicksCounter == (shuffledEmojis.length/2)) {
+                setTimeout(function(){alert('Congrats! You Win!!!');}, 1600)
+            }
+        
+    } else {
+        setTimeout(() => {
+            firstClick.classList.remove('flip')
+            secondClick.classList.remove('flip');
+            alert('Try Again!')
+        })
+    }
+           
         
          
     } 
     } 
 
-// if(firstClick && secondClick === emojis.length);
-//         console.log('GAME OVER!')
+    
 
 
-// flips counter
+    // flips counter
 wrappers.addEventListener('click', function () {
         count += 1;
         document.querySelector('.flips-box').innerText = count;
@@ -117,39 +149,16 @@ wrappers.addEventListener('click', function () {
     
     
     
-    
-    
-    // start timer to countdown time from 45 seconds and alerting player
-    document.querySelector('.start').addEventListener('click', function() {
-        audio.play();
-        let counter = 45;
-        setInterval( function () {
-            counter--;
-            if(counter >=0) {
-                span = document.querySelector('.start');
-                span.innerHTML = counter;
-            }
-            if (counter === 0) {
-                alert('Sorry, Time ran out!');
-                clearInterval(counter);
-            }
-        }, 1000);
-    }, {once: true})
-    
-    
-    
-    
-    
-    
-    // shuffle array of emojis
-    let shuffledEmojis = emojis.sort(function () {
+// shuffle array of emojis
+let shuffledEmojis = emojis.sort(function () {
         return Math.random() - 0.5;
     });
     
     console.log(shuffledEmojis);
     
-    
-    let newEmojis = shuffledEmojis;
+ 
+    // place emojis in cards and hide
+let newEmojis = shuffledEmojis;
     cells.forEach((cell) => {
         boxZero.innerHTML = newEmojis[0];
         boxOne.innerHTML = newEmojis[1];
@@ -169,70 +178,67 @@ wrappers.addEventListener('click', function () {
         boxFifteen.innerHTML = newEmojis[15];
     })  
     
-    document.querySelector('.box_zero').addEventListener('click', () => {
+ document.querySelector('.box_zero').addEventListener('click', (temp) => {
         boxZero.style.textIndent = '0' ;
         
     })
     
-    document.querySelector('.box_one').addEventListener('click', () => {
+document.querySelector('.box_one').addEventListener('click', (temp) => {
         boxOne.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_two').addEventListener('click', () => {
+document.querySelector('.box_two').addEventListener('click', (temp) => {
         boxTwo.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_three').addEventListener('click', () => {
+document.querySelector('.box_three').addEventListener('click', (temp) => {
         boxThree.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_four').addEventListener('click', () => {
+document.querySelector('.box_four').addEventListener('click', (temp) => {
         boxFour.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_five').addEventListener('click', () => {
+document.querySelector('.box_five').addEventListener('click', (temp) => {
         boxFive.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_six').addEventListener('click', () => {
+document.querySelector('.box_six').addEventListener('click', (temp) => {
         boxSix.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_seven').addEventListener('click', () => {
+document.querySelector('.box_seven').addEventListener('click', (temp) => {
         boxSeven.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_eight').addEventListener('click', () => {
+document.querySelector('.box_eight').addEventListener('click', (temp) => {
         boxEight.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_nine').addEventListener('click', () => {
+document.querySelector('.box_nine').addEventListener('click', (temp) => {
         boxNine.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_ten').addEventListener('click', () => {
+document.querySelector('.box_ten').addEventListener('click', (temp) => {
         boxTen.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_eleven').addEventListener('click', () => {
+document.querySelector('.box_eleven').addEventListener('click', (temp) => {
         boxEleven.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_twelve').addEventListener('click', () => {
+document.querySelector('.box_twelve').addEventListener('click', (temp) => {
         boxTwelve.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_thirteen').addEventListener('click', () => {
+document.querySelector('.box_thirteen').addEventListener('click', (temp) => {
         boxThirteen.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_fourteen').addEventListener('click', () => {
+document.querySelector('.box_fourteen').addEventListener('click', (temp) => {
         boxFourteen.style.textIndent = '0' ;
     })
 
-    document.querySelector('.box_fifteen').addEventListener('click', () => {
+document.querySelector('.box_fifteen').addEventListener('click', (temp) => {
         boxFifteen.style.textIndent = '0' ;
     })
-
- 
-
