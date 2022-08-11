@@ -17,11 +17,11 @@ How to play:
 
 ![Screen Shot 2022-08-11 at 2 30 50 PM](https://user-images.githubusercontent.com/102116778/184214357-7875392a-5a75-4a84-8417-28564b0fd798.png)
 
-This screen shot shows when a player makes a correct match!
+This screen shot shows the main game screen player sees when the site loads!
 
 ![Screen Shot 2022-08-11 at 2 37 40 PM](https://user-images.githubusercontent.com/102116778/184214587-d9157088-1676-45bb-8bf4-3ff3bf35cfd3.png)
 
-This screen shot shows when a player makes an incorrect match!
+This screen shot shows when a player makes a correct match!
 
 ![Screen Shot 2022-08-11 at 2 40 23 PM](https://user-images.githubusercontent.com/102116778/184214976-609c852c-58c4-4f4f-9a6a-fc4a043e52f2.png)
 
