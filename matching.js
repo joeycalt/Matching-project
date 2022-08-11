@@ -38,6 +38,9 @@ let boxThirteen = document.querySelector('.box_thirteen')
 let boxFourteen = document.querySelector('.box_fourteen')
 let boxFifteen = document.querySelector('.box_fifteen')
 const audio = new Audio ("https://www.fesliyanstudios.com/play-mp3/5450")
+let message = document.querySelector('.message');
+let messageTwo = document.querySelector('.messageTwo');
+let messageThree = document.querySelector('.messageThree')
 
 // __________________________________________________________________//
 // CODE:
@@ -51,7 +54,7 @@ const audio = new Audio ("https://www.fesliyanstudios.com/play-mp3/5450")
 // start timer to countdown time from 45 seconds and alerting player
 document.querySelector('.start').addEventListener('click', function() {
 audio.play();
-let counter = 45;
+let counter = 60;
 setInterval( function () {
         counter--;
         if(counter >=0) {
@@ -59,7 +62,7 @@ setInterval( function () {
             span.innerHTML = counter;
         }
         if (counter === 0) {
-            alert('Sorry, Time ran out!');
+            document.querySelector('.message').innerHTML = 'Sorry! Time ran out!';
             clearInterval(counter);
         }
     }, 1000);
@@ -110,12 +113,12 @@ function reloadPage() {
     if(firstClick.innerHTML === secondClick.innerHTML) {
         firstClick.removeEventListener('click', flipCard);
         secondClick.removeEventListener('click', flipCard);
-        setTimeout(function(){alert('Its A Match!');}, 1100)
+        setTimeout(function(){document.querySelector('.message').innerHTML = 'Found A Match!';}, 1100)
     }
         if(isMatch) {
             clicksCounter +=1;
             if(clicksCounter == (shuffledEmojis.length/2)) {
-                setTimeout(function(){alert('Congrats! You Win!!!');}, 1600)
+                setTimeout(function(){document.querySelector('.message').innerHTML = 'Congrats! You Win!!!';}, 1600)
             }
         
     } else {
@@ -124,8 +127,8 @@ function reloadPage() {
             secondClick.classList.remove('flip');
             firstClick.style.textIndent = '';
             secondClick.style.textIndent = '';
-            alert('No match, Try Again!')
-        })
+            document.querySelector('.message').innerHTML = 'Sorry! Try again!'
+        }, 1100)
     }
            
         
