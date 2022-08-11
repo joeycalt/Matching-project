@@ -125,9 +125,9 @@ function reloadPage() {
         
     } else {
         setTimeout(() => {
-            firstClick.classList.remove('flip')
-            secondClick.classList.remove('flip');
-            alert('Try Again!')
+            firstClick.removeEventListener('click',flipCard);
+            secondClick.removeEventListener('click', flipCard);
+            alert('Not a match! Try Again!')
         })
     }
            
@@ -178,67 +178,67 @@ let newEmojis = shuffledEmojis;
         boxFifteen.innerHTML = newEmojis[15];
     })  
     
- document.querySelector('.box_zero').addEventListener('click', (temp) => {
+ document.querySelector('.box_zero').addEventListener('click', () => {
         boxZero.style.textIndent = '0' ;
         
     })
     
-document.querySelector('.box_one').addEventListener('click', (temp) => {
+document.querySelector('.box_one').addEventListener('click', () => {
         boxOne.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_two').addEventListener('click', (temp) => {
+document.querySelector('.box_two').addEventListener('click', () => {
         boxTwo.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_three').addEventListener('click', (temp) => {
+document.querySelector('.box_three').addEventListener('click', () => {
         boxThree.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_four').addEventListener('click', (temp) => {
+document.querySelector('.box_four').addEventListener('click', () => {
         boxFour.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_five').addEventListener('click', (temp) => {
+document.querySelector('.box_five').addEventListener('click', () => {
         boxFive.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_six').addEventListener('click', (temp) => {
+document.querySelector('.box_six').addEventListener('click', () => {
         boxSix.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_seven').addEventListener('click', (temp) => {
+document.querySelector('.box_seven').addEventListener('click', () => {
         boxSeven.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_eight').addEventListener('click', (temp) => {
+document.querySelector('.box_eight').addEventListener('click', () => {
         boxEight.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_nine').addEventListener('click', (temp) => {
+document.querySelector('.box_nine').addEventListener('click', () => {
         boxNine.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_ten').addEventListener('click', (temp) => {
+document.querySelector('.box_ten').addEventListener('click', () => {
         boxTen.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_eleven').addEventListener('click', (temp) => {
+document.querySelector('.box_eleven').addEventListener('click', () => {
         boxEleven.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_twelve').addEventListener('click', (temp) => {
+document.querySelector('.box_twelve').addEventListener('click', () => {
         boxTwelve.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_thirteen').addEventListener('click', (temp) => {
+document.querySelector('.box_thirteen').addEventListener('click', () => {
         boxThirteen.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_fourteen').addEventListener('click', (temp) => {
+document.querySelector('.box_fourteen').addEventListener('click', () => {
         boxFourteen.style.textIndent = '0' ;
     })
 
-document.querySelector('.box_fifteen').addEventListener('click', (temp) => {
+document.querySelector('.box_fifteen').addEventListener('click', () => {
         boxFifteen.style.textIndent = '0' ;
     })
