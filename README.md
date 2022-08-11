@@ -13,17 +13,33 @@ How to play:
 
 - Creating this Emoji Matching game was a great experience. I learned many new things when it comes to software development. In order to build this game, I used HTML to set up the website with the important variables. Used CSS to 'decorate' the game to make it look fun and approachable. Lastly, used Javscript to make the game actually work. Made the Start button begin the game, Play Again button to refresh the gameboard, and made each individual card clickable to flip them over and show their respective emoji.
 
-- Phtots of game:
+- Photos of game:
 
-![image info](Screen Shot 2022-08-11 at 11.19.41 AM.png)
-![image info](Screen Shot 2022-08-10 at 8.25.46 PM.png)
-![image info](Screen Shot 2022-08-10 at 8.26.50 PM.png)
+![Screen Shot 2022-08-11 at 2 30 50 PM](https://user-images.githubusercontent.com/102116778/184214357-7875392a-5a75-4a84-8417-28564b0fd798.png)
+
+This screen shot shows when a player makes a correct match!
+
+![Screen Shot 2022-08-11 at 2 37 40 PM](https://user-images.githubusercontent.com/102116778/184214587-d9157088-1676-45bb-8bf4-3ff3bf35cfd3.png)
+
+This screen shot shows when a player makes an incorrect match!
+
+![Screen Shot 2022-08-11 at 2 40 23 PM](https://user-images.githubusercontent.com/102116778/184214976-609c852c-58c4-4f4f-9a6a-fc4a043e52f2.png)
+
+Lastly, this screen shot shows when a player completes the game!
+
+
 
 Photos of code I enjoyed and which gave me the most trouble:
 
-![image info](Screen Shot 2022-08-11 at 11.23.58 AM.png)
-![image info](Screen Shot 2022-08-11 at 11.23.34 AM.png)
-![image info](Screen Shot 2022-08-11 at 11.24.24 AM.png)
+![Screen Shot 2022-08-11 at 2 42 38 PM](https://user-images.githubusercontent.com/102116778/184215377-00070077-e206-4191-8ae0-e1c8854f92c3.png)
+
+This piece of code is what gave me the most trouble! I definitely struggled the most with making the cards flip back over if it is an incorrect match.
+
+![Screen Shot 2022-08-11 at 2 43 56 PM](https://user-images.githubusercontent.com/102116778/184215642-dd80a376-60a3-40f4-b8a6-f26c8a8825f2.png)
+
+This piece is what was the most fun for me and the piece i enjoyed making and proud of completeing it. Love how I was able to count each flip the player makes.
+
+
 
 
 

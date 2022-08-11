@@ -51,7 +51,7 @@ h6 {
 }
 
 .start:hover {
-    color: yellow;
+    color: #1C77C3;
 }
 
 .reset {
@@ -66,7 +66,7 @@ h6 {
 }
 
 .reset:hover {
-    color: yellow;
+    color: #1C77C3;
 }
 
 .timer{
@@ -110,7 +110,7 @@ h6 {
 }
 
 #cell:hover {
-    background-color: orange;
+    background-color: #D64933;
     transform: scale(1.03);
 }
 
@@ -164,5 +164,5 @@ h6 {
 }
 
 #cell.box_zero.flip, #cell.box_one.flip, #cell.box_two.flip, #cell.box_three.flip, #cell.box_four.flip, #cell.box_five.flip, #cell.box_six.flip, #cell.box_seven.flip, #cell.box_eight.flip, #cell.box_nine.flip, #cell.box_ten.flip, #cell.box_eleven.flip, #cell.box_twelve.flip, #cell.box_thirteen.flip, #cell.box_fourteen.flip, #cell.box_fifteen.flip {
-    background-color: green;
+    background-color: lightgreen;
 }
