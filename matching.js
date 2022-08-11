@@ -38,8 +38,6 @@ let boxThirteen = document.querySelector('.box_thirteen')
 let boxFourteen = document.querySelector('.box_fourteen')
 let boxFifteen = document.querySelector('.box_fifteen')
 const audio = new Audio ("https://www.fesliyanstudios.com/play-mp3/5450")
-let winGame = document.querySelector('.win');
-let lostGame = document.querySelector('.lost');
 
 // __________________________________________________________________//
 // CODE:
@@ -47,9 +45,6 @@ let lostGame = document.querySelector('.lost');
 // |
 // |
 // v
-
-
-
 
 
 
@@ -125,9 +120,11 @@ function reloadPage() {
         
     } else {
         setTimeout(() => {
-            firstClick.removeEventListener('click',flipCard);
-            secondClick.removeEventListener('click', flipCard);
-            alert('Not a match! Try Again!')
+            firstClick.classList.remove('flip')
+            secondClick.classList.remove('flip');
+            firstClick.style.textIndent = '';
+            secondClick.style.textIndent = '';
+            alert('No match, Try Again!')
         })
     }
            
@@ -136,10 +133,7 @@ function reloadPage() {
     } 
     } 
 
-    
-
-
-    // flips counter
+     // flips counter
 wrappers.addEventListener('click', function () {
         count += 1;
         document.querySelector('.flips-box').innerText = count;
@@ -178,9 +172,9 @@ let newEmojis = shuffledEmojis;
         boxFifteen.innerHTML = newEmojis[15];
     })  
     
- document.querySelector('.box_zero').addEventListener('click', () => {
+ document.querySelector('.box_zero').addEventListener('click', () => {     
         boxZero.style.textIndent = '0' ;
-        
+        ;
     })
     
 document.querySelector('.box_one').addEventListener('click', () => {
@@ -242,3 +236,4 @@ document.querySelector('.box_fourteen').addEventListener('click', () => {
 document.querySelector('.box_fifteen').addEventListener('click', () => {
         boxFifteen.style.textIndent = '0' ;
     })
+    
